@@ -1,0 +1,11 @@
+# Site settings
+title: Thoughts Outs
+email: cfabianski@me.com
+github: "https://github.com/cfabianski"
+description: "Technical blog to improve your Rails application."
+baseurl: ""
+url: "http://cfabianski.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty

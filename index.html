@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+  <h1>{{ post.title }}</h1>
+  <p class="meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
+
+  {{ post.content }}
+{% endfor %}
