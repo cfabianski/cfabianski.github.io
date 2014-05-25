@@ -4,7 +4,16 @@ layout: default
 
 {% for post in site.posts %}
   <h1>{{ post.title }}</h1>
-  <p class="meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
+  <p class="meta">
+    {{ post.date | date: "%b %-d, %Y" }}
+    {% if post.metas %}
+      {% for meta in post.metas %}
+        <span class="small">{{ meta }}</span>
+      {% endfor %}
+    {% endif %}
+  </p>
 
-  {{ post.content }}
+  <p>
+    {{ post.content }}
+  </p>
 {% endfor %}
