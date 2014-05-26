@@ -16,7 +16,7 @@ Back in 2011, when we had to implement this feature, it was obvious that we will
 
 This was working pretty fine.
 
-Here is how the model looks like:
+Here is how the model looked like:
 
 {% highlight ruby %}
   class Post < ActiveRecord::Base
@@ -27,7 +27,7 @@ Here is how the model looks like:
 
 ### Create
 
-To create a record you just have to do:
+To create a record we just had to do:
 
 {% highlight ruby %}
   Post.create(title: "Title", text: "Text")
@@ -38,7 +38,7 @@ To create a record you just have to do:
 => #<Post id: 1, created_at: "2014-05-25 17:31:44", updated_at: "2014-05-25 17:31:44">
 {% endhighlight %}
 
-Or, if you want to create several languages in a row:
+Or, if we wanted to create several languages in a row:
 
 {% highlight ruby %}
   Post.create(title_fr: "Titre", text_fr: "Texte", title_en: "Title", text: "Text")
@@ -50,11 +50,11 @@ Or, if you want to create several languages in a row:
 => #<Post id: 2, created_at: "2014-05-25 17:39:42", updated_at: "2014-05-25 17:39:42">
 {% endhighlight %}
 
-(Notice that this is generating 3 `INSERT`s for a single record)
+(Notice that this was generating 3 `INSERT`s for a single record)
 
 ### Update
 
-If we want to update the translations, the gems handle that for us as well:
+If we wanted to update the translations, the gems handled that for us as well:
 
 {% highlight ruby %}
   post.title_fr = "Mon titre français"
@@ -69,7 +69,7 @@ If we want to update the translations, the gems handle that for us as well:
 
 ### `include` and `joins`
 
-To avoid the `n+1` queries, you have to put the `includes`:
+To avoid the `n+1` queries, we had to put the `includes`:
 
 {% highlight ruby %}
   Post.includes(:translations)
@@ -78,8 +78,8 @@ To avoid the `n+1` queries, you have to put the `includes`:
 => #<ActiveRecord::Relation [#<Post id: 2, created_at: "2014-05-25 17:31:44", updated_at: "2014-05-25 17:31:44">, #<Post id: 3, created_at: "2014-05-25 17:39:42", updated_at: "2014-05-25 17:39:42">]>
 {% endhighlight %}
 
-Sometimes, we would also want to perform some queries directly tied to the translations.
-For example, if I want to retrieve all `Post`s having a `title` translated in french, I would do this:
+Sometimes, we would also wanted to perform some queries directly tied to the translations.
+For example, to retrieve all `Post`s having a `title` translated in french, we would have done this:
 
 {% highlight ruby %}
   Post.includes(:translations).
