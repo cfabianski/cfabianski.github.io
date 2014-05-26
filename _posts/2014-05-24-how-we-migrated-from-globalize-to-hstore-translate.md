@@ -100,7 +100,7 @@ As per the [documentation][hstore-doc], the `hstore` data type is for storing se
 
 This is exactly what we need right?
 
-For this purpose, we're gonna use [`hstore-translate`][hstore-translate] written by the awesome Rob Worley.
+For this purpose, we're gonna use [`hstore-translate`][hstore-translate] written by the awesome [Rob Worley][rob-worley].
 
 The great thing with `hstore-translate` is that it makes the thing really easy to switch from `globalize` + `globalize-accessors` to it as there are sharing the same API.
 That also means that you cannot use `globalize` AND `hstore-translate` at the same time.
@@ -215,4 +215,5 @@ Thanks for reading.
 [globalize-accessors]: https://github.com/globalize/globalize-accessors
 [hstore-doc]: http://www.postgresql.org/docs/9.4/static/hstore.html
 [hstore-translate]: https://github.com/robworley/hstore_translate
+[rob-worley]: https://github.com/robworley
 [improve-globalize-compatibility-for-hstore-translate]: https://github.com/robworley/hstore_translate/pull/28
