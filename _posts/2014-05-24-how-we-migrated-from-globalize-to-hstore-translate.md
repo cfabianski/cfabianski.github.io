@@ -41,7 +41,7 @@ To create a record we just had to do:
 Or, if we wanted to create several languages in a row:
 
 {% highlight ruby %}
-  Post.create(title_fr: "Titre", text_fr: "Texte", title_en: "Title", text: "Text")
+  Post.create(title_fr: "Titre", text_fr: "Texte", title_en: "Title", text_en: "Text")
    (3.8ms)  BEGIN
   SQL (3.8ms)  INSERT INTO "posts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-05-25 17:39:42.736275"], ["updated_at", "2014-05-25 17:39:42.736275"]]
   SQL (3.2ms)  INSERT INTO "post_translations" ("created_at", "locale", "post_id", "text", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-05-25 17:39:42.760307"], ["locale", "fr"], ["post_id", 2], ["text", "Texte"], ["title", "Titre"], ["updated_at", "2014-05-25 17:39:42.760307"]]
