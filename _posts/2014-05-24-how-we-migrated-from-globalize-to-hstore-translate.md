@@ -67,7 +67,7 @@ If we wanted to update the translations, the gems handled that for us as well:
 => true
 {% endhighlight %}
 
-### `include` and `joins`
+### `includes`
 
 To avoid the `n+1` queries, we had to put the `includes`:
 
@@ -83,7 +83,6 @@ For example, to retrieve all `Post`s having a `title` translated in french, we w
 
 {% highlight ruby %}
   Post.includes(:translations).
-    joins(:translations).
     where(post_translations: { locale: "fr" }).
     where("post_translations.title IS NOT NULL")
   SQL (1.6ms)  SELECT "posts"."id" AS t0_r0, "posts"."created_at" AS t0_r1, "posts"."updated_at" AS t0_r2, "post_translations"."id" AS t1_r0, "post_translations"."post_id" AS t1_r1, "post_translations"."locale" AS t1_r2, "post_translations"."created_at" AS t1_r3, "post_translations"."updated_at" AS t1_r4, "post_translations"."title" AS t1_r5, "post_translations"."text" AS t1_r6 FROM "posts" INNER JOIN "post_translations" ON "post_translations"."post_id" = "posts"."id" WHERE "post_translations"."locale" = 'fr' AND (post_translations.title IS NOT NULL)
