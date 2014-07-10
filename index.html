@@ -2,18 +2,18 @@
 layout: default
 ---
 
-{% for post in site.posts %}
-  <h1>{{ post.title }}</h1>
-  <p class="meta">
-    {{ post.date | date: "%b %-d, %Y" }}
-    {% if post.metas %}
-      {% for meta in post.metas %}
-        <span class="small">{{ meta }}</span>
-      {% endfor %}
-    {% endif %}
-  </p>
+{% assign post = site.posts.first %}
 
-  <p>
-    {{ post.content }}
-  </p>
-{% endfor %}
+<h1>{{ post.title }}</h1>
+<p class="meta">
+  {{ post.date | date: "%b %-d, %Y" }}
+  {% if post.metas %}
+    {% for meta in post.metas %}
+      <span class="small">{{ meta }}</span>
+    {% endfor %}
+  {% endif %}
+</p>
+
+<p>
+  {{ post.content }}
+</p>
