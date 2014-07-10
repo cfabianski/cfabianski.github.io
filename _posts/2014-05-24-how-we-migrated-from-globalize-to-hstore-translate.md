@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How we migrated from globalize to hstore_translate"
-date:   2014-05-24 21:15:19
+date:   2014-05-24
 categories: rails
 metas: [i18n, globalize, hstore-translate, rails, postgresql]
 ---
