@@ -16,7 +16,9 @@ A point of interest is attached to a `world_node_id` which has to be a leaf.
 In a perfect world, every country would share the same structure, but that's definitely not the case.
 
 Just to take a few, in France, they have 2 sub-levels:
+
   - the region (`Rhône-Alpes`)
+  
   - the department (`Savoie`) :metal:
 
 In USA, they have 1 sub-level (`New-York`).
