@@ -158,7 +158,26 @@ As we don't have to compute and maintain the `rgt`/`lft` columns for every node 
 
 ## Benchmarks
 
-Benchs from PR.
+I wanted to measure the impact on a rake task to add 1200+ nodes.
+This rake task is pretty naïve and is hitting ActiveRecord and the validations but this will give you a good idea of how better it is.
+
+`awesome_nested_set`:
+
+{% highlight bash %}
+real    8m2.574s
+user    4m49.298s
+sys     0m31.666s
+{% endhighlight %}
+
+`ltree_hierarchy`:
+
+{% highlight bash %}
+real    1m10.675s
+user    1m0.244s
+sys     0m5.700s
+{% endhighlight %}
+
+For this benchmark, I've just switched from `awesome_nested_set` to `ltree_hierarchy`. Nothing else.
 
 ## Conclusion
 
