@@ -9,3 +9,7 @@ url: "http://cfabianski.github.io"
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Gems
+gems:
+  - jemoji
