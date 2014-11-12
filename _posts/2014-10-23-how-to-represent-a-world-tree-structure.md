@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to represent a world tree structure"
-date:   2014-07-10
+date:   2014-10-23
 categories: postgresql, rails
 metas: [awesome_nested_set, ltree_hierarchy, ltree, rails, postgresql]
 ---
@@ -18,7 +18,7 @@ In a perfect world, every country would share the same structure, but that's def
 Just to take a few, in France, they have 2 sub-levels:
 
   - the region (`Rhône-Alpes`)
-  
+
   - the department (`Savoie`) :metal:
 
 In USA, they have 1 sub-level (`New-York`).
