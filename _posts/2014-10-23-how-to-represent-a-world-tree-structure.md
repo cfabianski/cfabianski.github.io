@@ -7,7 +7,7 @@ metas: [awesome_nested_set, ltree_hierarchy, ltree, rails, postgresql]
 ---
 
 In our main product ([BRIDGE][bridge]), a Store Locator, the SEO has to be really good.
-As such, we had to store a world tree structure in the database.
+As such, we have to store a world tree structure in the database.
 
 ## Use Case
 
@@ -15,22 +15,22 @@ A point of interest is attached to a `world_node_id` which has to be a leaf.
 
 In a perfect world, every country would share the same structure, but that's definitely not the case.
 
-Just to take a few, in France, they have 2 sub-levels:
+Just to take a few, in France, we have 2 sub-levels:
 
   - the region (`Rhône-Alpes`)
 
   - the department (`Savoie`) :metal:
 
-In USA, they have 1 sub-level (`New-York`).
+In USA, there is only one sub-level (`New-York`).
 The United Kingdom, well... it's complicated :smile:
 
 So what if we need to efficiently retrieve the country name for all the points of interest in a single query?
 
 ***Bonus: What if we need to count the number of points of interest per country or attached node/level?***
 
-## The MySQL way :trollface:
+## The `MySQL` way
 
-Let's take as an example how it would look like with `awesome_nested_set`.
+Let's take as an example how it would look like with `awesome_nested_set` (the gem we were actually using).
 
 ### Schema
 
@@ -71,7 +71,7 @@ As a node is only aware about its closest parent, we need some `JOIN`s and for t
 {% endhighlight %}
 
 But as the number of levels is different over the countries, we can't do that.
-This is where a `RECURSIVE CTE` would be helpful.
+This is where a `RECURSIVE CTE` would be helpful (This is one of the reason I :heart: PostgreSQL).
 
 {% highlight sql %}
   WITH RECURSIVE country_ids (point_of_interest_id, country_id, depth) AS (
@@ -103,7 +103,7 @@ This is where a `RECURSIVE CTE` would be helpful.
 The `WITH RECURSIVE` part will create a temporary table with the `point_of_interest_id` and the `country_id` as an output.
 We will then be able to use that table as any other table into another query.
 
-That works, but we have to admit that is going to be painful at some point :smile:
+That works, but at some point, we had to admit it was painful.
 
 ### Slow is slow
 
@@ -114,11 +114,11 @@ This because we have to rebuild **all** this stuff to make it usable.
 
 ## The PostgreSQL way
 
-What could be better than a `ltree` datatype to represent a tree? :trollface:
+What could be better than a `ltree` datatype to represent a tree?
 
 The gem `ltree_hierarchy` (again wrote by the awesome [Rob Worley][rob-worley] :heart:) has been built to answer that question.
 
-It again shares the same API with `awesome_nested_set`.
+`ltree_hierarchy` shares the same API with `awesome_nested_set`.
 
 Let's see how it works and how it changes the thing up.
 
@@ -160,39 +160,30 @@ As we don't have to compute and maintain the `rgt`/`lft` columns for every node 
 
 ## Benchmarks
 
-I wanted to measure the impact on a rake task to add 1200+ nodes.
-This rake task is pretty naïve and is hitting ActiveRecord and the validations but this will give you a good idea of how better it is.
+I wanted to measure the impact on a script that adds 1200+ nodes in the existing tree.
 
-`awesome_nested_set`:
+With `awesome_nested_set`, the script runs in 8 minutes.
+With `ltree_hierarchy`, the script runs in 1 minutes.
 
-{% highlight bash %}
-real    8m2.574s
-user    4m49.298s
-sys     0m31.666s
-{% endhighlight %}
-
-`ltree_hierarchy`:
-
-{% highlight bash %}
-real    1m10.675s
-user    1m0.244s
-sys     0m5.700s
-{% endhighlight %}
-
-For this benchmark, I've just switched from `awesome_nested_set` to `ltree_hierarchy`. Nothing else.
+For this test, I only switched the library from `awesome_nested_set` to `ltree_hierarchy`.
+8 times faster... not bad.
 
 ## Conclusion
 
-We recently made the switch from `awesome_nested_set` to `ltree_hierarchy` and so far so good.
+Few months after the switch from `awesome_nested_set` to `ltree_hierarchy` and so far so good.
 We were massively caching the tree structure to answer faster to some queries. Every time we were performing an update in the tree we had to rebuild the cache.
 
 The main problem is that we were not able to easily retrieve the informations we needed.
 
-SQL query + Cache together aren't good friends, isn't it?
+SQL query + Cache together aren't good friends, are they?
 
-We came back to the basics and we just got rid of the cache. We were also able to provide some JSON from out of the database to reduce the impact of not relying on a caching layer anymore.
+We came back to the basics and we just got rid of the extra cache layer. We were also able to provide some JSON out of the database to reduce the impact of not relying on a caching layer anymore.
 
-Thanks for reading.
+Note: the 14th of October, Rob transfered the ownership of his 2 gems (`ltree_hierarchy` and `hstore_translate`) to Leadformance.
+The idea of these 2 gems has been discussed internally when we were exchanging about how to improve the things.
+Out of these discussions, he developed the idea and open sourced them.
+
+:heart: Rob.
 
 [bridge]: http://www.leadformance.com
 [ancestors]: https://github.com/collectiveidea/awesome_nested_set/blob/08d522ad02ad6c0fff922fef9e96ae7a210a1b56/lib/awesome_nested_set/model/relatable.rb#L13-L17
