@@ -181,12 +181,12 @@ We came back to the basics and we just got rid of the extra cache layer. We were
 
 Note: the 14th of October, Rob transfered the ownership of his 2 gems (`ltree_hierarchy` and `hstore_translate`) to Leadformance.
 The idea of these 2 gems has been discussed internally when we were exchanging about how to improve the things.
-Out of these discussions, he developed the idea and open sourced them.
+Out of these discussions, he developed the idea and open sourced them (faster than me :smile:).
 
 :heart: Rob.
 
 [bridge]: http://www.leadformance.com
 [ancestors]: https://github.com/collectiveidea/awesome_nested_set/blob/08d522ad02ad6c0fff922fef9e96ae7a210a1b56/lib/awesome_nested_set/model/relatable.rb#L13-L17
 [descendants]: https://github.com/collectiveidea/awesome_nested_set/blob/08d522ad02ad6c0fff922fef9e96ae7a210a1b56/lib/awesome_nested_set/model/relatable.rb#L48-L51
-[leaf]: https://github.com/collectiveidea/awesome_nested_set/blob/08d522ad02ad6c0fff922fef9e96ae7a210a1b56/lib/awesome_nested_set/...
+[leaf]: https://github.com/collectiveidea/awesome_nested_set/blob/08d522ad02ad6c0fff922fef9e96ae7a210a1b56/lib/awesome_nested_set/model.rb#L134-L136
 [rob-worley]: https://github.com/robworley
