@@ -2,7 +2,7 @@
 layout: post
 title:  "How to represent a world tree structure"
 date:   2015-04-25
-categories: postgresql, rails
+categories: [postgresql, rails]
 metas: [awesome_nested_set, ltree_hierarchy, ltree, rails, postgresql]
 ---
 
