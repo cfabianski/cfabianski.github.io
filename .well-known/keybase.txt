@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/cfabianski
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://cfabianski.github.io
+  * I am cfabianski (https://keybase.io/cfabianski) on keybase.
+  * I have a public key with fingerprint C122 67B3 C238 0BAE 75E5  6573 189A 0D6C 64F9 E873
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01202621a050f36e285271354c09f2c10092c24b17a272b00c3b90c0104e74a07c2d0a",
+            "fingerprint": "c12267b3c2380bae75e56573189a0d6c64f9e873",
+            "host": "keybase.io",
+            "key_id": "189a0d6c64f9e873",
+            "kid": "01012785ef15c0544b8131e60859260399e263419f9f60e330d55ba490f3c8c415860a",
+            "uid": "19eb76950d2617d8156cc4032999ce00",
+            "username": "cfabianski"
+        },
+        "revoke": {
+            "sig_ids": [
+                "03558afd1064647d47272e6c49125dfdbb21678121cf82cbba916e6fbf8791cb0f"
+            ]
+        },
+        "service": {
+            "hostname": "cfabianski.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1460377014,
+    "expire_in": 157680000,
+    "prev": "7a113e6d96eb7f66f9b685e09412388550e0c31248b08be7cef5a7c79d5ce102",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMOvAnicbVJrbBVFGL1tKUILtiqPthhLtigVS5mZ3ZnduT4oRkMTexPBIEHEujM7
+225uu7e9e9uCUFpJeSMgoQm2ieAjoZYQLFivBAQhchWQR6ElgoFIQCFFkVJqAbU6
+t8gvnT+TmZzvnPOd7/t6ZJIvJSGjaWSZdeeql3D0wECVb3Zq4+cLFRayFij+hUpQ
+DF6izBJepDjoWIpfARABRBA0AQa2SgQyMNKhijUOqI04BIAijjQGdRPpiAHAVUYB
+BxBoQtdMoHNkAVPJU2zHLRHhirDjRiQthwgRnakcqQZgptCxwATrKjSoCSzCiWZT
+YeiqLCwNefEKaY6Znsh3QvJPPooH7f0P/r5v6Vw3sLAh5gBrGjOgCgUBBqaIAJVS
+gYiqQWpTmwChqsDCmJkalV1yg2sQG2TQd9U9HSqYTigGFiJQtwyICecaUBGllAsA
+4kBPhF2zXMS7s03mmK4XdJTaPCUsqkNBEU/Wc0qkbU/xz1WAirFh2hYERCOabmm6
+jE8QrlGIsGVbjCFIdAMiyG0DccZMCokgNrMNnULOgK3Mk9xSs9rhg+TxnP6jn1/i
+REqr2L3UKsKhSIiHyiSiNBKp8Pxxd5EFFfGSGsGK/yUrZo5ryWnJimoR9pyQq/ih
+RPKIE2eHmoxP1wHU8hQxv8IJi2InjsA6MYA8cR1RLSl1E0JVEIsSmZ1NiE0ZkQMB
+VINy6gbGQMhtgUgzGDCY0LmwsalznVqYCwiQEm+v0g1JbiR9miWSUybompGqsFBq
+Dx54fYgvIcU3NDkxvsa+lOHp95e7flPan2kdysgxbUuGle7OuhGr8Wfuf5F7H62/
+cOyZXRt2zyw6kIUPvRU7/+2m431dPdnnUz+bFWSTgocSRicsfWJdBJ/PCT56Yu1m
+X0Pf6sTJK/qMLacb7r40YmPjpXkrN26btGR7W1JWJGNIeUtpdEXg1/KTXRz8OO9g
+vlbbO+zlER0ZBXRsZnPfxhWR7sm3y7UP5xS0Ttv296KsT1fSbZ0/tG7ZW3MnN7Nl
+ypiGUckxombv68xdMu7IonP+qzl5NLo62v7uX9oX5qKZWdf51m/axoxm/eNf6zie
+O2R2Q8utXd3Llibk9i972vtqZ13GLzcGytxGY+wjnSiQ7fak7Dy95vflt3e/8uDC
+7sBl77HMqbG7OcTfXr/v7vanNree3PHCznXs4qTeJ/svuMeP7RgxcW52T/ThQK7/
+8Z+GHe5r3zK+8NW1Z+re7woMLL5mTP2k8WT0gYZZ/Q+d3ZCvLi5Z3zzlxKnygYIZ
+q66aKRPmR4tCWVcmrzZ836edG5eX/lzh6P0XloeDbk60eGLBx0dYWts7he6tlL7K
+ntl73+xsmvrHl6cSn1++qrZjXOG1vQdjE0DqjJyWD5LeHjrn58r+rbHvbi6O5kwH
+3r4pR0+1ph5u3tP23gzn0rSgcznEfjsbKKovudLc1VQfOpO7rOPwrMQ1On/DGB6o
+VabPbI+d2XPx0E2RlJ488dk6t4gIp653VHLX9X8AZGPWdw==
+=8D2O
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cfabianski
+
+==================================================================
+
